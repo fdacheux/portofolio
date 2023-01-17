@@ -2,21 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Home from "./pages/Home";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import Layout from "./components/Layout";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-     <Router>
-      <Header />
+    <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" index element={<LandingPage />} />
+        <Route element={<Layout />}>
+          <Route path="/home" element={<Home />} />
+        </Route>
       </Routes>
-      <Footer />
     </Router>
   </React.StrictMode>
 );

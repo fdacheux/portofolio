@@ -1,10 +1,8 @@
+import style from "./Home.module.scss";
 
 function Home() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-      </header>
+    <div className="home">
     </div>
   );
 }
