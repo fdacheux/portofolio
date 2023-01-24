@@ -1,12 +1,20 @@
+@use "keyframes";
 @import "./variables.scss";
 
-@mixin linearGradient-transparent-mask {
-  z-index: 1;
+//Layouts and masks
+
+@mixin max-size-absolute-elements {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
+  content: "";
+}
+
+@mixin linearGradient-transparent-mask {
+  z-index: 1;
+  @include max-size-absolute-elements;
   opacity: 1;
   background: linear-gradient(
     180deg,
@@ -15,6 +23,32 @@
   );
   content: "";
 }
+
+//Sizing and positionning elements
+
+@mixin full-width-height-block {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin flex-dir($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin flex-column-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-content-items {
+  align-items: center;
+  justify-content: center;
+}
+
+//Mediaqueries
 
 @mixin xsmall-screens {
   @media screen and (max-width: map-get($max-width, xsmall)) {
@@ -28,8 +62,26 @@
   }
 }
 
+@mixin portrait-small-screens {
+  @media screen and (max-width: map-get($max-width, small)) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin landscape-small-screens {
+  @media screen and (max-width: map-get($max-width, small)) and (orientation: landscape) {
+    @content;
+  }
+}
+
 @mixin medium-screens {
   @media screen and (min-width: map-get($min-width, medium )) and (max-width: map-get($max-width, medium )) {
+    @content;
+  }
+}
+
+@mixin landscape-medium-screens {
+  @media screen and (min-width: map-get($min-width, medium )) and (max-width: map-get($max-width, medium )) and (orientation: landscape) {
     @content;
   }
 }
@@ -44,4 +96,155 @@
   @media screen and (min-width: map-get($min-width, large)) {
     @content;
   }
+}
+
+@mixin xlarge-screens {
+  @media screen and (min-width: map-get($min-width, x-large)) {
+    @content;
+  }
+}
+
+//specific elements : Mondrian landing page
+
+@mixin mondrian-blocks($height, $width, $bg-color) {
+  height: $height;
+  width: $width;
+  background-color: $bg-color;
+}
+
+@mixin mondrian-horizontal-blocks($color, $width) {
+  display: flex;
+  justify-content: flex-end;
+  background-color: $color;
+  width: $width;
+  height: 100%;
+  position: relative;
+}
+
+@mixin mondrian-vertical-blocks($color, $height) {
+  display: flex;
+  justify-content: flex-end;
+  background-color: $color;
+  width: 100%;
+  height: $height;
+  position: relative;
+}
+
+@mixin div-separation-line {
+  width: 0;
+  border-right: solid 5px black;
+  border-left: solid 5px black;
+  height: 100%;
+  @include landscape-small-screens {
+    border-right: solid 4px black;
+    border-left: solid 4px black;
+  }
+  @include landscape-medium-screens {
+    border-right: solid 4px black;
+    border-left: solid 4px black;
+  }
+}
+
+@mixin separation-line {
+  position: absolute;
+  content: "";
+  background-color: black;
+}
+
+@mixin separation-line-horizontal {
+  @include separation-line;
+  height: 10px;
+  left: 0;
+  right: 0;
+}
+
+@mixin separation-line-vertical {
+  @include separation-line;
+  width: 10px;
+  bottom: 0;
+  top: 0;
+}
+
+@mixin horizontal-bottom-separation-line {
+  @include separation-line-horizontal;
+  bottom: 0;
+}
+
+@mixin horizontal-top-separation-line {
+  @include separation-line-horizontal;
+  top: 0;
+}
+
+@mixin vertical-right-separation-line {
+  @include separation-line-vertical;
+  right: 0;
+}
+
+@mixin vertical-left-separation-line {
+  @include separation-line-vertical;
+  left: 0;
+}
+
+@mixin mondrian-clear-style-links {
+  color: white;
+  font-size: 15px;
+  @include medium-screens {
+    font-size: 20px;
+  }
+  @include large-screens {
+    font-size: 24px;
+  }
+}
+
+//specific elements : Kusamalanding page
+
+@mixin dotPosition($align-items, $justify-content) {
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin dotSize($height, $width) {
+  height: $height;
+  width: $width;
+  @include xsmall-screens {
+    height: calc($height / 1.8);
+    width: calc($width / 1.8);
+  }
+  @include medium-screens {
+    height: calc(1.1 * $height);
+    width: calc(1.1 * $width);
+  }
+  @include large-screens {
+    height: calc(1.15 * $height);
+    width: calc(1.15 * $width);
+  }
+  @include xlarge-screens {
+    height: calc(1.18 * $height);
+    width: calc(1.18 * $width);
+  }
+}
+
+//Animations
+
+@mixin appearing-mondrianblock_animation {
+  animation: appearing-mondrian-block 250ms ease-out forwards;
+}
+
+@mixin disappearing-mondrianblock_animation {
+  animation: disappearing-mondrian-block 250ms ease-out 200ms forwards;
+}
+
+@mixin portrait-penduling {
+  opacity: 1;
+  transition: all ease-in-out 400ms;
+  transform-origin: top center;
+  animation: moving-portrait ease-in-out 500ms alternate infinite;
+}
+
+@mixin mondrian-text-animation {
+  animation: mondrian-about-text-animation 6s linear infinite;
+}
+
+@mixin home-icon-animation {
+  animation: appearing-door 0.4s ease-out forwards;
 }

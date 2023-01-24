@@ -1,0 +1,435 @@
+@import "../../../style/utils/mixins.scss";
+
+.kusamaLandingPage {
+  background: #b10213;
+  background: linear-gradient(
+    323deg,
+    rgba(177, 2, 19, 1) 0%,
+    rgba(179, 0, 17, 1) 49%,
+    rgba(255, 138, 138, 1) 100%
+  );
+  background-position: left;
+  @include full-width-height-block;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 40;
+  display: flex;
+  position: absolute;
+}
+
+.themeBackground {
+  height: 100%;
+  width: 100%;
+}
+.link {
+  display: flex;
+  text-align: center;
+  box-shadow: 5px 5px 8px rgba(150, 34, 34, 0.452);
+  background: radial-gradient(circle at 10px 10px, #353434, rgb(0, 0, 0));
+  @include full-width-height-block;
+  @include center-content-items;
+  z-index: 5;
+  transform: scale(1);
+  &__content {
+    text-decoration: none;
+  }
+  &__text {
+    @include full-width-height-block;
+    @include center-content-items;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    @include medium-large-screens {
+      font-size: 22px;
+    }
+  }
+  &__icon {
+    border-radius: 50%;
+    color: hsl(0, 100%, 94%);
+    padding: 5px;
+    font-size: 28px !important;
+    @include xsmall-screens {
+      font-size: 24px !important;
+    }
+    @include medium-screens {
+      font-size: 38px !important;
+    }
+    @include large-screens {
+      font-size: 38px !important;
+    }
+  }
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &.dot70 {
+    @include xsmall-screens {
+      height: 50px;
+      width: 50px;
+    }
+  }
+  &::after {
+    display: flex;
+    @include center-content-items;
+    @include max-size-absolute-elements;
+    background: radial-gradient(
+      circle at 10px 10px,
+      hsl(354, 98%, 70%),
+      rgba(150, 34, 14, 0.4)
+    );
+    opacity: 0;
+    z-index: -1;
+    transition: all 350ms ease-in-out;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    & > .face {
+      display: none;
+    }
+    & > .tail {
+      display: block;
+    }
+    opacity: 0.9;
+    &:after {
+      opacity: 0.3;
+    }
+  }
+}
+
+.tail {
+  display: none;
+  @include home-icon-animation;
+  transition: all 350ms ease-in-out;
+}
+
+.face {
+  @include home-icon-animation;
+}
+
+.line {
+  width: 100%;
+  height: 20%;
+  border-bottom: solid black 1px;
+  border-top: 0px;
+  display: flex;
+}
+
+.line > div {
+  border-top: 0px;
+  width: 20%;
+  height: 100%;
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+    border-right: solid 1px black;
+}
+
+.line2 {
+  width: 100%;
+  height: 33%;
+    border-bottom: solid black 1px;
+  border-top: 0px;
+  display: flex;
+  &__1 {
+    height: 5%;
+  }
+  &__2 {
+    height: 19%;
+  }
+  &__3 {
+    height: 50%;
+  }
+  &__4 {
+    height: 24%;
+  }
+  &__5 {
+    height: 15%;
+  }
+  &__6 {
+    height: 41%;
+  }
+}
+
+.dotBox {
+  display: flex;
+  &__dot {
+    border-radius: 50%;
+    background-color: black;
+  }
+  &__topRight {
+    @include dotPosition(flex-start, flex-end);
+  }
+  &__topCenter {
+    @include dotPosition(flex-start, center);
+  }
+  &__center {
+    @include dotPosition(center, center);
+  }
+  &__centerRight {
+    @include dotPosition(center, flex-end);
+  }
+  &__centerLeft {
+    @include dotPosition(center, flex-start);
+  }
+  &__bottomRight {
+    @include dotPosition(flex-end, flex-end);
+  }
+  &__bottomCenter {
+    @include dotPosition(flex-end, center);
+  }
+  &__bottomLeft {
+    @include dotPosition(flex-end, flex-start);
+  }
+}
+
+.dot15 {
+  @include dotSize(15px, 15px);
+  @include landscape-medium-screens {
+    @include dotSize(0.8vw, 0.8vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(1vw, 1vw);
+  }
+}
+
+.dot20 {
+  @include dotSize(20px, 20px);
+  @include landscape-medium-screens {
+    @include dotSize(1vw, 1vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(1.3vw, 1.3vw);
+  }
+}
+
+.dot22 {
+  @include dotSize(22px, 22px);
+  @include landscape-medium-screens {
+    @include dotSize(1.3vw, 1.2vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(1.4vw, 1.4vw);
+  }
+}
+
+.dot26 {
+  @include dotSize(26px, 26px);
+  @include landscape-medium-screens {
+    @include dotSize(1.5vw, 1.5vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(1.7vw, 1.7vw);
+  }
+}
+
+.dot28 {
+  @include dotSize(28px, 28px);
+  @include landscape-medium-screens {
+    @include dotSize(1.8vw, 1.8vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(2vw, 2vw);
+  }
+}
+
+.dot34 {
+  @include dotSize(34px, 34px);
+  @include landscape-medium-screens {
+    @include dotSize(2.2vw, 2.2vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(2.3vw, 2.3vw);
+  }
+}
+
+.dot40 {
+  @include dotSize(40px, 40px);
+  @include landscape-medium-screens {
+    @include dotSize(2.3vw, 2.3vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(2.5vw, 2.5vw);
+  }
+}
+
+.dot48 {
+  @include dotSize(48px, 48px);
+  @include landscape-medium-screens {
+    @include dotSize(3vw, 3vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(3.5vw, 3.5vw);
+  }
+}
+
+.dot52 {
+  @include dotSize(52px, 52px);
+  @include landscape-medium-screens {
+    @include dotSize(3.7vw, 3.77vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(4vw, 4vw);
+  }
+}
+
+.dot70 {
+  @include dotSize(70px, 70px);
+  @include landscape-medium-screens {
+    @include dotSize(6vw, 6vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(5vw, 5vw);
+  }
+}
+
+.dot80 {
+  @include dotSize(80px, 80px);
+  @include landscape-medium-screens {
+    @include dotSize(8.2vw, 8.2vw);
+  }
+  @include landscape-small-screens {
+    @include dotSize(8.2vw, 8.2vw);
+  }
+}
+
+.noLandscape {
+  @include landscape-small-screens {
+    display: none;
+  }
+  @include landscape-medium-screens {
+    display: none;
+  }
+}
+.styleButton {
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  text-align: center;
+  box-shadow: 5px 4px 5px rgba(27, 1, 5, 0.4);
+  background: radial-gradient(circle at 10px 10px, #353434, rgb(0, 0, 0));
+  @include full-width-height-block;
+  @include center-content-items;
+  z-index: 5;
+  transform: scale(1);
+  &__content {
+    text-decoration: none;
+  }
+  &__text {
+    @include full-width-height-block;
+    @include center-content-items;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    @include medium-large-screens {
+      font-size: 22px;
+    }
+  }
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &.dot70 {
+    @include xsmall-screens {
+      height: 50px;
+      width: 50px;
+    }
+  }
+  &::after {
+    display: flex;
+    @include center-content-items;
+    @include max-size-absolute-elements;
+    background: radial-gradient(
+      circle at 10px 10px,
+      hsl(354, 98%, 70%),
+      rgba(150, 34, 14, 0.4)
+    );
+    opacity: 0;
+    z-index: -1;
+    transition: all 350ms ease-in-out;
+  } 
+  &__mondrian{
+
+  @include landscape-medium-screens {
+   
+        display: none;
+    }
+    @include landscape-small-screens {
+        display: none;
+    }
+  } 
+      &:hover {
+    transform: scale(1.05);
+
+    opacity: 0.9;
+    &:after {
+      opacity: 0.3;
+    }
+  }
+  
+
+}
+
+.titleBox {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  content: "";
+}
+
+.ball {
+  display: block;
+  background: black;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  margin: 0;
+  background: radial-gradient(circle at 30px 40px, #dd2828, rgb(12, 0, 0));
+  overflow: hidden;
+  &__reflect1 {
+    width: 70px;
+    height: 60px;
+    margin: 30%;
+    background: radial-gradient(circle at 10px 20px, #353434, rgb(0, 0, 0));
+    border-radius: 50%;
+    transform: translateX(122px) translateY(-40px) skewX(-4deg) skewY(35deg);
+    position: absolute;
+  }
+  &__reflect2 {
+    width: 38px;
+    height: 72px;
+    margin: 30%;
+    background: radial-gradient(circle at 10px 20px, #353434, rgb(0, 0, 0));
+    border-radius: 49%;
+    transform: translateX(-81px) translateY(65px) skewX(4deg) skewY(35deg);
+    position: absolute;
+  }
+  &__reflect3 {
+    width: 58px;
+    height: 40px;
+    margin: 30%;
+    background: radial-gradient(circle at 10px 10px, #353434, rgb(0, 0, 0));
+    border-radius: 50%;
+    transform: translateX(-58px) translateY(-59px) skewX(2deg) skewY(146deg);
+    position: absolute;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 1%;
+    left: 2.5%;
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at 10% 0px,
+      #ffffff,
+      rgba(255, 255, 255, 0) 50%
+    );
+    filter: blur(15px);
+    z-index: 2;
+  }
+}

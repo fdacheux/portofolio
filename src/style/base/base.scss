@@ -1,8 +1,9 @@
+@import "../utils/keyframes.scss";
+
 html,
 body,
 #app {
   min-height: 100%;
-  height: 100%;
 }
 
 body {
@@ -14,15 +15,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #1b0505;
-  background: #461818cc;
-  background: linear-gradient(
-    to left,
-    #985353b0 0%,
-    #985353c0 50%,
-    #985353be 51%,
-    #dc555596 100%
-  );
+  /* background: #461818cc;
+  // background: linear-gradient(
+  //   to left,
+  //   #985353b0 0%,
+  //   #985353c0 50%,
+  //   #985353be 51%,
+  //   #dc555596 100%
+  // ); */
   z-index: 2;
 }
 
-
+main { 
+  min-height: 100%;
+  min-width: 100%;
+}

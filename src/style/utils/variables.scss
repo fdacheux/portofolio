@@ -1,6 +1,7 @@
 $colour-primary: #ff6060;
 $colour-secondary: #fff;
 $colour-tertiary: #f6f6f6;
+$mondrian-black-blocks: rgba(0, 0, 0, 0.904);
 
 // Responsive :
 
@@ -19,6 +20,10 @@ $max-width: (
   large: 1199px,
   x-large: 1399px,
 );
+
+// Borders :
+
+$mondrian-borders : solid 10px black; 
 
 // Border-radius :
 

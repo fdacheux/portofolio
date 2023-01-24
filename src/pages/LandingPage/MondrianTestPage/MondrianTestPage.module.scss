@@ -1,0 +1,350 @@
+@import "../../../style/utils/mixins.scss";
+@import "../../../style/utils/variables.scss";
+
+.mondrianLandingPage {
+  background: white;
+  @include full-width-height-block;
+  max-height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  display: flex;
+  position: absolute;
+}
+
+.block1 {
+  @include flex-dir(column);
+  @include mondrian-blocks(100%, 95%, none);
+  position: relative;
+}
+
+.b1nestedBlock1 {
+  @include mondrian-blocks(10%, 100%, none);
+  display: flex;
+  position: relative;
+  border-bottom: $mondrian-borders;
+}
+
+.b1nested1Block1 {
+  @include mondrian-blocks(100%, 25%, yellow);
+}
+
+.b1nested1Block2 {
+  @include mondrian-blocks(100%, 15%, white);
+  border-left: $mondrian-borders;
+}
+
+.b1nested1Block3 {
+  @include mondrian-blocks(100%, 20.5%, white);
+  border-left: $mondrian-borders;
+}
+
+.b1nested1Block4 {
+  @include mondrian-blocks(100%, 40.1%, red);
+  border-left: $mondrian-borders;
+  @include flex-dir(column);
+  @include center-content-items;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &::after {
+    @include max-size-absolute-elements;
+    background-color: black;
+    opacity: 0;
+    z-index: 3;
+  }
+  &:hover {
+    opacity: 0.8;
+    &:after {
+      opacity: 0.5;
+    }
+  }
+
+  @include medium-large-screens {
+    align-items: flex-start;
+  }
+}
+
+.b1nestedBlock2 {
+  @include mondrian-blocks(90%, 100%, white);
+  display: flex;
+  position: relative;
+}
+
+.b1nested2Block1 {
+  @include mondrian-blocks(100%, 11%, none);
+  position: relative;
+  border-right: $mondrian-borders;
+}
+
+.b1nested2b1Cell1 {
+  @include mondrian-blocks(25%, 100%, white);
+}
+
+.b1nested2b1Cell2 {
+  @include mondrian-blocks(20%, 100%, white);
+  border-top: $mondrian-borders;
+}
+
+.b1nested2b1Cell3 {
+  @include mondrian-blocks(54%, 100%, blue);
+  border-top: $mondrian-borders;
+}
+
+.b1nested2Block2 {
+  @include mondrian-blocks(100%, 89%, none);
+  @include flex-dir(column);
+}
+
+.b1nested2b2nestedBlock1 {
+  @include mondrian-blocks(65%, 100%, none);
+  display: flex;
+  @include large-screens {
+    padding-left: 0;
+    align-items: center;
+  }
+
+  border-bottom: $mondrian-borders;
+}
+
+.titleBlock {
+  @include mondrian-blocks(100%, 53%, red);
+  position: relative;
+  @include flex-dir(column);
+  border-right: $mondrian-borders;
+  padding-left: 10px;
+  padding-right: 10px;
+  @include xsmall-screens {
+    justify-content: center;
+  }
+  @include medium-screens {
+    align-items: center;
+    width: 53.8%;
+  }
+  @include large-screens {
+    @include center-content-items;
+    width: 54%;
+  }
+}
+
+.landingPageTitle {
+  font-family: "Gravitas One", cursive;
+  font-size: 24px;
+
+  @include xsmall-screens {
+    font-size: 18px;
+  }
+
+  @include medium-screens {
+    font-size: 48px;
+  }
+  @include large-screens {
+    font-size: 56px;
+    text-align: center;
+  }
+}
+
+.landingPageSubtitle {
+  font-size: 18px;
+  text-align: left;
+  width: 100%;
+  @include medium-screens {
+    font-size: 28px;
+  }
+  @include large-screens {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+.b1nested2b2nested1Block1 {
+  @include flex-dir(column);
+  @include mondrian-blocks(100%, 46%, none);
+  @include medium-screens {
+    width: 45%;
+  }
+  @include large-screens {
+    @include center-content-items;
+    width: 44.5%;
+  }
+}
+
+.b1nested2b2nested1Block1Line1 {
+  @include mondrian-blocks(42%, 100%, none);
+  display: flex;
+}
+
+.b1nested2b2nested1Block1Cell1,
+.b1nested2b2nested1Block1Cell2 {
+  @include mondrian-blocks(100%, 50%, none);
+}
+
+.b1nested2b2nested1Block1Cell2 {
+  border-left: $mondrian-borders;
+}
+
+.b1nested2b2nested1Block1Line2 {
+  @include mondrian-blocks(58%, 100%, yellow);
+  border-top: $mondrian-borders;
+}
+
+.b1nested2b2nestedBlock2 {
+  @include mondrian-blocks(34%, 100%, none);
+  display: flex;
+}
+
+.b1nested2b2nested2Col1 {
+  @include mondrian-blocks(100%, 30%, none);
+  border-right: $mondrian-borders;
+}
+
+.b1nested2b2nested2C1Line1 {
+  @include mondrian-blocks(65%, 100%, $mondrian-black-blocks);
+  border-bottom: $mondrian-borders;
+}
+
+.b1nested2b2nested2C1Line2 {
+  @include mondrian-blocks(25%, 100%, white);
+}
+
+.b1nested2b2nested2Col2 {
+  @include mondrian-blocks(100%, 70%, white);
+  @include flex-dir(column);
+}
+
+.b1nested2b2nested2C2Line1 {
+  @include mondrian-blocks(35%, 100%, white);
+  display: flex;
+}
+
+.separationCentered {
+  @include div-separation-line;
+  margin-left: 33.4%;
+  @include medium-screens {
+    margin-left: 34.8%;
+  }
+  @include large-screens {
+    margin-left: 35.4%;
+  }
+}
+
+.b1nested2b2nested2C2Line2 {
+  @include mondrian-blocks(50%, 100%, none);
+  display: flex;
+}
+
+.b1nested2b2nested2C2L2Col1 {
+  @include flex-dir(column);
+  @include mondrian-blocks(100%, 35.4%, white);
+  @include medium-large-screens {
+    width: 35.6%;
+  }
+}
+
+.b1nested2b2nested2C2L2Cell1 {
+  @include mondrian-blocks(70%, 100%, none);
+  border-top: $mondrian-borders;
+  @include medium-screens {
+    height: 64%;
+  }
+}
+
+.b1nested2b2nested2C2L2Cell2 {
+  @include mondrian-blocks(28%, 100%, $mondrian-black-blocks);
+  border-top: $mondrian-borders;
+  @include medium-screens {
+    height: 36%;
+  }
+}
+
+.b1nested2b2nested2C2L2Col2 {
+  border-top: $mondrian-borders;
+  border-left: $mondrian-borders;
+  @include mondrian-blocks(100%, 64.6%, blue);
+  @include medium-large-screens {
+    width: 64.1%;
+  }
+}
+
+.b1nested2b2nested2C2Line3 {
+  @include mondrian-blocks(15%, 100%, white);
+  border-top: $mondrian-borders;
+}
+
+.block2 {
+  @include flex-dir(column);
+  @include mondrian-blocks(100%, 5%, red);
+  border-left: $mondrian-borders;
+  position: relative;
+}
+
+.b2nestedBlock1 {
+  @include mondrian-blocks(70.4%, 100%, white);
+  position: relative;
+  @include medium-screens {
+    height: 69.9%;
+  }
+  @include large-screens {
+    height: 70.4%;
+  }
+  border-bottom: solid 10px black;
+}
+
+.b2nestedBlock2 {
+  @include flex-dir(column);
+  @include mondrian-blocks(30.7%, 100%, red);
+  @include medium-screens {
+    height: 30.9%;
+  }
+  @include large-screens {
+    height: 30.9%;
+  }
+}
+
+.switchStyle {
+  display: flex;
+  @include center-content-items;
+  @include full-width-height-block;
+  padding: 5px 15px;
+  @include medium-large-screens {
+    align-items: flex-start;
+    width: auto;
+  }
+}
+
+.caseTitle {
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  @include appearing-mondrianblock_animation;
+}
+
+.switchButton {
+  @include max-size-absolute-elements;
+  display: flex;
+  @include center-content-items;
+  padding-bottom: 5px;
+  color: white;
+  font-size: 16px;
+  transform: scale(1);
+  transition: all ease-in 250ms;
+  z-index: 6666;
+  opacity: 0;
+  @include appearing-mondrianblock_animation;
+  @include large-screens {
+    font-size: 24px;
+  }
+}
+
+.switchButton:hover {
+  color: rgba(255, 255, 255, 0.548);
+  transform: scale(1.1);
+  transition: all ease-in 250ms;
+}
+
+.hidden {
+  opacity: 0;
+  @include disappearing-mondrianblock_animation;
+}
+

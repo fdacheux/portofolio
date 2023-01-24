@@ -1,24 +1,22 @@
+import { useCallback, useState } from "react";
 import style from "./LandingPage.module.scss";
+import KasumaPage from "./Kusama";
+import MondrianPage from "./Mondrian";
 
 function LandingPage() {
+  const [styleName, setStyle] = useState("Kasuma");
+  const changeStyle = (styleName: string) => {
+    setStyle(styleName);
+  };
+
   return (
-    <div className={style.mondrianLandingPage}>
-      <div className="block1">
-        <div className="nestedBlock1">
-          <div className="separation"></div>
-        </div>
-        <div className="nested-block2">
-          <div className="separation"></div>
-        </div>
-        <div className="nested-block3">
-          <div className="separation"></div>
-        </div>
-        <div className="nested-block4">
-          <p>Switch style :</p>
-          <a href=""> Kasuma/Murakami</a>
-        </div>
-      </div>
-    </div>
+    <>
+      {styleName === "Kusama" ? (
+         <KasumaPage changeStyle={changeStyle} /> 
+       ) : ( 
+        <MondrianPage changeStyle={changeStyle} />
+       )} 
+    </>
   );
 }
 
