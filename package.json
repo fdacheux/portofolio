@@ -54,6 +54,7 @@
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@commitlint/cz-commitlint": "^17.4.2",
+    "@types/uuid": "^9.0.0",
     "commitizen": "^4.2.6",
     "husky": "^8.0.3"
   },
