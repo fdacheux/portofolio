@@ -8,10 +8,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .titleBox {
-  padding-top: 3vh;
-  padding-bottom: 1.5vh;
-  margin-bottom: 0;
+  margin-top: 150px;
+  margin-bottom: 1.5vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  background: url("https://images.unsplash.com/photo-1650804068570-7fb2e3dbf888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=729&q=80");
+  border: outset 8px rgba(68, 68, 68, 0.808); 
+  box-shadow: inset -4px -4px 5px rgb(29, 28, 28);
+  &__text{
+    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    text-shadow: 1px 2px 4px rgba(153, 152, 151, 0.212);
+}
 }
