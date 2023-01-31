@@ -24,23 +24,9 @@ declare module '@mui/material/styles' {
 
 function Portofolio() {
 
-  // // const [previousPos, setPos] = useState(window.scrollY);
-  // const [scrollTop, setScrollTop] = useState(0);
-  // const [isDisplayed, setDisplay] = useState(true)
-
-  // let previousPos = window.scrollY;
-
-  // const handleScroll = (e:  React.WheelEvent<HTMLElement>) : void | undefined=> {
-  //   console.log(window.scrollY > previousPos);
-  //   e.deltaY < 0 ? setDisplay(true) : setDisplay(false);
-  //   setScrollTop(window.scrollY);
-  //   // setPos(window.scrollY)
-  //   previousPos = window.scrollY;
-  //   console.log(e.deltaY);
-  // };
 
   return (
-    <main className={style.portofolio}>
+    <main className={style.portofolio}  >
       <ThemeProvider theme={theme}>
         <div className={style.titleBox}>
           <h1 className={style.titleBox__text} >Portofolio</h1>

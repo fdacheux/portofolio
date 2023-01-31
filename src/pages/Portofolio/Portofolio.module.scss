@@ -11,6 +11,7 @@
   overflow-y: scroll;
   // overflow: hidden;
   overflow-x: hidden;
+  overscroll-behavior: auto;
 
   @include medium-large-screens {
     overflow-y: scroll;
