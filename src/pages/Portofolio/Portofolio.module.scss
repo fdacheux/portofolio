@@ -4,7 +4,6 @@
   display: flex;
   width: 100%;
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -20,17 +19,19 @@
 }
 
 .titleBox {
-  margin-top: 150px;
-  margin-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  position: absolute;
+  top: 90px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 10px;
   background: url("https://images.unsplash.com/photo-1650804068570-7fb2e3dbf888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=729&q=80");
   border: outset 8px rgba(68, 68, 68, 0.808);
   box-shadow: inset -4px -4px 5px rgb(29, 28, 28);
 
-  @include xxl-screens {
-    margin-top: 150px;
+  @include medium-large-screens{
+    top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   &__hidden {
@@ -38,6 +39,7 @@
     z-index: -1;
   }
   &__text {
+    font-size: 24px;
     background: linear-gradient(
       to bottom,
       #cfc09f 22%,
@@ -51,9 +53,10 @@
     -webkit-text-fill-color: transparent;
     color: #fff;
     text-shadow: 1px 2px 4px rgba(153, 152, 151, 0.212);
+    
+    @include medium-large-screens {
+      font-size: 30px;
+    }
   }
 
 }
-  .titleBox__hidden{
-    display : none
-  }
