@@ -3,7 +3,10 @@ import { Grid } from "@mui/material";
 import bookiMiniature from "../../assets/booki-framed-transparentBg.png";
 import ohMyFoodMiniature from "../../assets/ohmyfood-framed.png";
 import panthereMiniature from "../../assets/panthere-framed.png";
+import kanapMiniature from "../../assets/kanap-framed.png";
 import projects from "../../data/projects.data.json";
+
+
 
 function Gallery() {
   return (
@@ -13,7 +16,8 @@ function Gallery() {
           item
           xs={12}
           md={6}
-          lg={3}
+          lg={6}
+          xl={3}
           className={style.cardsGrid__cell}
           paddingLeft={0}
         >
@@ -39,7 +43,7 @@ function Gallery() {
           item
           xs={12}
           md={6}
-          lg={4}
+          lg={6}
           xl={3}
           className={style.cardsGrid__cell}
           paddingLeft={0}
@@ -66,13 +70,13 @@ function Gallery() {
           item
           xs={12}
           md={6}
-          lg={4}
+          lg={6}
           xl={3}
           className={style.cardsGrid__cell}
           paddingLeft={0}
         >
           <div className={style.card}>
-          <div className={style.card__imgContainer}>
+            <div className={style.card__imgContainer}>
               <a href={`/project/${projects[2].projectId}`}>
                 <img
                   src={panthereMiniature}
@@ -93,12 +97,28 @@ function Gallery() {
           item
           xs={12}
           md={6}
-          lg={4}
+          lg={6}
           xl={3}
           className={style.cardsGrid__cell}
           paddingLeft={0}
         >
-          <div className={style.card}>test</div>
+          <div className={style.card}>
+            <div className={style.card__imgContainer}>
+              <a href={`/project/${projects[3].projectId}`}>
+                <img
+                  src={kanapMiniature}
+                  alt={projects[3].alt}
+                  className={`${style.card__miniature} ${style.card__toRight}`}
+                />
+              </a>
+            </div>
+            <div className={style.card__projectLabel}>
+              <h2 className={style.card__projectTitle}>{projects[3].title}</h2>
+              <p className={style.card__projectDescription}>
+                {projects[3].description_short}
+              </p>
+            </div>
+          </div>
         </Grid>
         {/* <Grid
           item

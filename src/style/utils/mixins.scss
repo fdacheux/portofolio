@@ -104,6 +104,13 @@
   }
 }
 
+@mixin xxl-screens {
+  @media screen and (min-width: map-get($min-width, xx-large)) {
+    @content;
+  }
+}
+
+
 //specific elements : Mondrian landing page
 
 @mixin mondrian-blocks($height, $width, $bg-color) {

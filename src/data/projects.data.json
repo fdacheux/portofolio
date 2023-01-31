@@ -3,14 +3,14 @@
     "id": "28c7541b-4a60-409a-b2cc-e6c32f8745a5",
     "projectId": "1",
     "completionDate": "2022-05-06",
-    "typeOfProject" : "OpenClassrooms",
+    "typeOfProject": "OpenClassrooms",
     "title": "Booki",
     "miniature": "",
     "cover": "",
     "alt": "Projet Booki informations",
     "description": "Booki est le premier projet que j'ai réalisé durant ma formation à OpenClassrooms. Le projet consistait à réaliser un prototype en HTML/CSS pour une entreprise fictive, en intégrant la maquette mise à disposition. Comme pour chaque projet, il fallait présenter son travail au cours d'une soutenance sous la forme d'un jeu de rôle. Ici l'évaluateur jouer le rôle de Sarah, la CTO de l'entreprise. La présentation était, par conséquent, orienté technique. ",
-    "descriptionSoutenance": "À la fin de chaque projet OpenClassrooms a lieu une soutenance sous forme de jeu de rôles. Ici, l'évaluateur devait interpréter le rôle du CTO. La présentation était donc orienté sur la technique et était d'une durée de 15 minutes (+/- 5minutes).",
-    "description_short":"Prototype en HTML/CSS",
+    "descriptionSoutenance": "Ici, l'évaluateur devait interpréter le rôle du CTO. La présentation était donc orienté sur la technique et était d'une durée de 10 à 20 minutes.",
+    "description_short": "Prototype en HTML/CSS",
     "technologies": [
       "HTML5",
       "CSS3",
@@ -28,14 +28,14 @@
     "id": "f5945aee-6e9d-4d1d-bdc0-eecfa98973a6",
     "projectId": "2",
     "completionDate": "2022-06-03",
-    "typeOfProject" : "OpenClassrooms",
+    "typeOfProject": "OpenClassrooms",
     "title": "Ohmyfood",
     "miniature": "",
     "cover": "",
     "alt": "Projet ohmyfood informations",
-    "description": "Ohmyfood est le deuxième projet de la formation développeur web d'OpenClassrooms. Comme pour le projet Booki, il s'agit d'une intégration de maquette entièrement en HTML et CSS mais qui, cette fois, est centré sur une utilisation poussée du CSS et notamment des animations (keyframes, transform, opacity, questions autour de la performance liée aux animations...). Le projet est aussi l'occasion de découvrir le préprocesseur Sass et d'apprendre les bonnes pratiques qui l'entourent (conventions de nommage, système 7-1).",  
-    "descriptionSoutenance": "À la fin de chaque projet OpenClassrooms a lieu une soutenance sous forme de jeu de rôles. Ici, l'évaluateur devait interpréter le rôle du CTO. La présentation était donc orienté sur la technique et était d'une durée de 15 minutes (+/- 5minutes).",
-    "description_short":"Prototype en HTML/CSS",
+    "description": "Ohmyfood est le deuxième projet de la formation développeur web d'OpenClassrooms. Comme pour le projet Booki, il s'agit d'une intégration de maquette entièrement en HTML et CSS mais qui, cette fois, est centré sur une utilisation poussée du CSS et notamment des animations (keyframes, transform, opacity, questions autour de la performance liée aux animations...). Le projet est aussi l'occasion de découvrir le préprocesseur Sass et d'apprendre les bonnes pratiques qui l'entourent (conventions de nommage, système 7-1).",
+    "descriptionSoutenance": "Ici, l'évaluateur devait interpréter le rôle du CTO. La présentation était donc orienté sur la technique et était d'une durée de 10 à 20 minutes.",
+    "description_short": "Prototype en HTML/CSS",
     "technologies": [
       "HTML5",
       "CSS3",
@@ -45,25 +45,25 @@
       "Github pages",
       "google slides (soutenance)",
       "Canvas (soutenance)",
-      "ScreeToGif (soutenance)"
+      "ScreenToGif (soutenance)"
     ],
     "tags": ["HTML/CSS", "Intégration", "Maquette", "Prototype", "Responsive"],
     "githubUrl": "https://github.com/fdacheux/projet-3_ohmyfood",
     "githubPagesUrl": "https://fdacheux.github.io/projet-3_ohmyfood/index.html",
-    "otherUrl": ","
+    "otherUrl": ""
   },
   {
     "id": "acd3c0b3-64f1-4a95-92d6-e5e27d8c3b97",
     "projectId": "3",
     "completionDate": "2022-06-24",
-    "typeOfProject" : "OpenClassrooms",
+    "typeOfProject": "OpenClassrooms",
     "title": "La panthère",
     "miniature": "",
     "cover": "",
     "alt": "Projet la panthère",
-    "description": "La Panthère est le troisième projet de la formation développeur web d'OpenClassrooms. Il était demandé de fournir un rapport d'optimisation pour améliorer le SEO et l'accessibilité d'un site déjà existant. Les recommandations devaient être émises en se basant sur les lignes directrices du W3C (WCAG mais aussi test de validation, performances...), et de Google pour le SEO.",  
-    "descriptionSoutenance": "À la fin de chaque projet OpenClassrooms a lieu une soutenance sous forme de jeu de rôles. Ici, l'évaluateur devait interpréter le rôle du CEO. L'enjeu de la présentation était donc de parvenir à synthétiser les recommandations retenues : intérêt, pourquoi elles et non les autres, impact, application réelle avec le site amélioré à l'appui. La présentation devait durer 15 minutes (+/- 5min) suivi d'un temps de questions toujours dans le cadre du jeu de rôles.",
-    "description_short":"Optimisation d'un site",
+    "description": "La Panthère est le troisième projet de la formation développeur web d'OpenClassrooms. Il était demandé de fournir un rapport d'optimisation pour améliorer le SEO et l'accessibilité d'un site déjà existant. Les recommandations devaient être émises en se basant sur les lignes directrices du W3C (WCAG mais aussi test de validation, performances...), et de Google pour le SEO.",
+    "descriptionSoutenance": "Ici, l'évaluateur interprétait le rôle du client. L'enjeu de la présentation était donc de parvenir à synthétiser les recommandations retenues : intérêt, pourquoi elles et non les autres, impact, application réelle avec le site amélioré à l'appui. La présentation devait durer 10 à 20 minutes.",
+    "description_short": "Optimisation d'un site",
     "technologies": [
       "HTML5",
       "CSS3",
@@ -80,11 +80,36 @@
       "Lighthouse",
       "google slides (soutenance)",
       "Canvas (soutenance)",
-      "ScreeToGif (soutenance)"
+      "ScreenToGif (soutenance)"
     ],
     "tags": ["HTML/CSS", "Optimisation", "SEO", "Accessibilité"],
     "githubUrl": "https://github.com/fdacheux/projet-4_La-Panthere",
     "githubPagesUrl": "https://fdacheux.github.io/projet-4_La-Panthere/",
     "otherUrl": ""
-}
+  },
+  {
+    "id": "c7e3131c-ba4c-41a7-8ae0-4a801bc1644c",
+    "projectId": "4",
+    "completionDate": "2022-09-22",
+    "typeOfProject": "OpenClassrooms",
+    "title": "Kanap",
+    "miniature": "../../assets/kanap-framed.png",
+    "cover": "",
+    "alt": "Découvrir le projet Kanap",
+    "description": "Kanap est le quatrième projet de la formation développeur web d'OpenClassrooms. Le but de ce projet était d'intégrer de façon dynamique des éléments provenant d'une API dans les différentes page web fournies. Le front et l'API étaient fournies et le code était à faire en JavaScript vanilla. Il s'agissait du premier projet utilisant du javascript. Il était aussi demandé de fournir un plan de test d'acceptation.",
+    "descriptionSoutenance": "Ici, l'évaluateur interprétait le rôle du CTO. La présentation, orientée technique, devait durer entre 10 et 20 minutes. Il fallait présenter le code, le site et le plan en justifiant ses choix.",
+    "description_short": "Intégration dynamique des éléments d'une API",
+    "technologies": [
+      "HTML5",
+      "JavaScript",
+      "VSC",
+      "Git/github",
+      "Lighthouse",
+      "google sheets (plan d'acceptation)"
+    ],
+    "tags": ["JavaScript", "Api", "Plan de tests d'acceptation"],
+    "githubUrl": "https://github.com/fdacheux/projet-4_La-Panthere",
+    "githubPagesUrl": "https://fdacheux.github.io/projet-4_La-Panthere/",
+    "otherUrl": ""
+  }
 ]

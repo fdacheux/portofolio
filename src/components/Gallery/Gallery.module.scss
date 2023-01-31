@@ -3,25 +3,27 @@
 .gallery {
   display: flex;
   justify-content: center;
-  align-items: center;
   max-height: 90%;
+  
   @include medium-large-screens {
     height: 100%;
+    width: 100%;
   }
 }
 
 .cardsGrid {
-  max-width: 90%;
+  max-width: 95%;
   max-height: 85%;
   padding-top: 2vw;
   padding-bottom: 2vw;
   // background-color: rgba(207, 207, 207, 0.801);
   border-radius: 10px;
   justify-content: center;
-  overflow-y: scroll;
+  overflow-x: hidden;
   z-index: 5;
   @include large-screens {
-    overflow-y: hidden;
+    // overflow-y: hidden;
+    // overflow-y: scroll;
   }
   &__cell {
     display: flex;
@@ -29,18 +31,22 @@
   }
 
   .card {
-    width: 400px;
-    height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    height: fit-content;
     &__imgContainer {
       height: 80%;
       margin-bottom: 50px;
     }
     &__miniature {
-      height: 100%;
+      // width: 250px;
+      max-height: 200px;
+      // height: 100%
+      @include xxl-screens {
+        max-height: 240px;
+      }
 
       &:hover {
         transform: rotate(-5deg);
@@ -54,7 +60,9 @@
     &__projectLabel {
       align-self: center;
       position: relative;
-      width: 155px;
+      max-width: 180px;
+      min-width: 173px;
+      min-height: 80px;
       border-radius: 2px;
       background-color: rgba(28, 56, 40, 0.308);
       background: url("https://images.unsplash.com/photo-1650804068570-7fb2e3dbf888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=729&q=80");
@@ -64,7 +72,10 @@
       padding-top: 1px;
       padding-bottom: 1px;
 
-
+      @include xxl-screens {
+        max-width: 200px;
+        min-width: 173px;
+      }
       // &:after {
       //   position: absolute;
       //   top: -14%;
@@ -110,7 +121,7 @@
       // color: rgba(0, 0, 0, 0.699);
       // text-shadow: 1px 1px 1px rgb(51, 51, 51);
       // font-size: 14px;
-      // background: linear-gradient(to bottom, #e2e1dd 22%,#e4e3e1 24%, #575757 26%, #afafae 27%,#ffffff 40%,#dad9d7 78%); 
+      // background: linear-gradient(to bottom, #e2e1dd 22%,#e4e3e1 24%, #575757 26%, #afafae 27%,#ffffff 40%,#dad9d7 78%);
       background-color: white;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
