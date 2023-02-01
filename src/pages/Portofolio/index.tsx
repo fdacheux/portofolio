@@ -1,7 +1,6 @@
 import { ThemeProvider, createTheme } from "@mui/material";
 import Gallery from "../../components/Gallery";
 import style from "./Portofolio.module.scss";
-import { WheelEventHandler, useState } from "react";
 
 const theme = createTheme({
   breakpoints: {
@@ -28,7 +27,7 @@ function Portofolio() {
   return (
     <main className={style.portofolio}  >
       <ThemeProvider theme={theme}>
-        <div className={style.titleBox}>
+        <div className={`${style.titleBox} ${style.goldenPlaque}`}>
           <h1 className={style.titleBox__text} >Portofolio</h1>
         </div>
         <Gallery />

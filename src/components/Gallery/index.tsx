@@ -5,12 +5,15 @@ import ohMyFoodMiniature from "../../assets/ohmyfood-framed.png";
 import panthereMiniature from "../../assets/panthere-framed.png";
 import kanapMiniature from "../../assets/kanap-framed.png";
 import projects from "../../data/projects.data.json";
-
-
+import {ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 
 function Gallery() {
   return (
     <section className={style.gallery}>
+      <div className={style.chevron}>
+        {/* <ArrowBackIosNew /> */}
+        {/* <span> Previous </span> */}
+      </div>
       <Grid container rowSpacing={3} className={style.cardsGrid}>
         <Grid
           item
@@ -31,7 +34,7 @@ function Gallery() {
                 />
               </a>
             </div>
-            <div className={style.card__projectLabel}>
+            <div className={`${style.card__projectLabel} ${style.card__projectLabelGold}`}>
               <h2 className={style.card__projectTitle}>{projects[0].title}</h2>
               <p className={style.card__projectDescription}>
                 {projects[0].description_short}
@@ -58,7 +61,7 @@ function Gallery() {
                 />
               </a>
             </div>
-            <div className={style.card__projectLabel}>
+            <div className={`${style.card__projectLabel} ${style.card__projectLabelGold}`}>
               <h2 className={style.card__projectTitle}>{projects[1].title}</h2>
               <p className={style.card__projectDescription}>
                 {projects[1].description_short}
@@ -85,7 +88,7 @@ function Gallery() {
                 />
               </a>
             </div>
-            <div className={style.card__projectLabel}>
+            <div className={`${style.card__projectLabel} ${style.card__projectLabelGold}`}>
               <h2 className={style.card__projectTitle}>{projects[2].title}</h2>
               <p className={style.card__projectDescription}>
                 {projects[2].description_short}
@@ -112,7 +115,7 @@ function Gallery() {
                 />
               </a>
             </div>
-            <div className={style.card__projectLabel}>
+            <div className={`${style.card__projectLabel} ${style.card__projectLabelGold}`}>
               <h2 className={style.card__projectTitle}>{projects[3].title}</h2>
               <p className={style.card__projectDescription}>
                 {projects[3].description_short}
@@ -120,51 +123,12 @@ function Gallery() {
             </div>
           </div>
         </Grid>
-        {/* <Grid
-          item
-          xs={12}
-          md={6}
-          lg={4}
-          xl={3}
-          className={style.cardsGrid__cell}
-          paddingLeft={0}
-        >
-          <div className={style.card}>test</div>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          lg={4}
-          xl={3}
-          className={style.cardsGrid__cell}
-          paddingLeft={0}
-        >
-          <div className={style.card}>test</div>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          lg={4}
-          xl={3}
-          className={style.cardsGrid__cell}
-          paddingLeft={0}
-        >
-          <div className={style.card}>test</div>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          lg={4}
-          xl={3}
-          className={style.cardsGrid__cell}
-          paddingLeft={0}
-        >
-          <div className={style.card}>test</div>
-        </Grid> */}
       </Grid>
+
+      <div className={style.chevron}>
+        {/* <span>Next</span> */}
+        {/* <ArrowForwardIos /> */}
+      </div>
     </section>
   );
 }

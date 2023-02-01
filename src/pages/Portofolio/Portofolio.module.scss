@@ -9,7 +9,6 @@
   align-items: center;
   position: relative;
   overflow-y: scroll;
-  // overflow: hidden;
   overflow-x: hidden;
   overscroll-behavior: auto;
 
@@ -22,17 +21,40 @@
 .titleBox {
   position: absolute;
   top: 90px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  background: url("https://images.unsplash.com/photo-1650804068570-7fb2e3dbf888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=729&q=80");
-  border: outset 8px rgba(68, 68, 68, 0.808);
-  box-shadow: inset -4px -4px 5px rgb(29, 28, 28);
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  width: 70%;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5),
+    0px 1px 3px rgba(0, 0, 0, 0.3);
+  border-color: #111;
+  color: #555;
+  background: linear-gradient(
+    top,
+    #a95,
+    #f2f2f2 25%,
+    #ffffff 38%,
+    #c5c5c5 63%,
+    #f7f7f7 87%,
+    #a95
+  );
+  background: -webkit-linear-gradient(
+    top,
+    #a95,
+    #fea 25%,
+    #ffffff 38%,
+    #dc8 63%,
+    #fea 87%,
+    #a95
+  );
 
-  @include medium-large-screens{
+  @include medium-large-screens {
     top: 120px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include large-screens{
+    width: 20%;
   }
 
   &__hidden {
@@ -40,24 +62,31 @@
     z-index: -1;
   }
   &__text {
+    text-align: center;
     font-size: 24px;
     background: linear-gradient(
       to bottom,
-      #cfc09f 22%,
-      #634f2c 24%,
-      #cfc09f 26%,
-      #cfc09f 27%,
-      #ffecb3 40%,
-      #3a2c0f 78%
+      #967e4b 22%,
+      #6d5532 24%,
+      #5a4929 26%,
+      #5a451e 27%,
+      #f3d79b 40%,
+      #644d2b 78%
     );
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #fff;
-    text-shadow: 1px 2px 4px rgba(153, 152, 151, 0.212);
-    
+    text-shadow: 1px 2px 4px rgba(133, 85, 61, 0.418);
+
     @include medium-large-screens {
       font-size: 30px;
     }
   }
-
+}
+.goldenPlaque {
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1),
+    0px 1px 3px rgba(0, 0, 0, 0.3);
+  outline: none;
+  border: 1px solid rgb(175, 175, 172);
 }
