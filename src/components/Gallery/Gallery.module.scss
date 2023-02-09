@@ -1,5 +1,21 @@
 @import "../../style/utils/mixins.scss";
 
+.galleryPaginationBox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.galleryBox {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
 .gallery {
   display: flex;
   justify-content: center;
@@ -60,6 +76,9 @@
     }
     &__miniature {
       max-height: 200px;
+      @include xsmall-screens {
+        max-height: 150px;
+      }
       @include xxl-screens {
         max-height: 240px;
       }
@@ -127,6 +146,10 @@
       @include xxl-screens {
         max-width: 200px;
         min-width: 173px;
+      }
+      @include xsmall-screens{
+        max-width: 150px;
+        min-width: 120px;
       }
     }
     &__projectTitle {

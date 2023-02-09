@@ -1,10 +1,11 @@
 import style from "./OcProjectContent.module.scss";
 import { Alert } from "@mui/material";
-import type IProjectData from "../../models/Project";
 import { v4 as uuidv4 } from "uuid";
 
-function ocProjectContent(project: any) {
-  const dateTime = new Date(project.completionDate);
+
+
+function OCProjectContent(project : any) {
+  const dateTime = new Date(project['completion-date']);
   const frDate = dateTime.toLocaleDateString("fr");
   console.log(project);
 
@@ -52,4 +53,4 @@ function ocProjectContent(project: any) {
   );
 }
 
-export default ocProjectContent;
+export default OCProjectContent;

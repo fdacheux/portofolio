@@ -8,12 +8,14 @@ import Layout from "./components/Layout";
 import Portofolio from "./pages/Portofolio";
 import Project from "./pages/Project";
 
+
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" index element={<LandingPage  />} />
         <Route element={<Layout />}>

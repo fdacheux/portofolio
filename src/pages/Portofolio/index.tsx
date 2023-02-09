@@ -2,6 +2,8 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import Gallery from "../../components/Gallery";
 import style from "./Portofolio.module.scss";
 
+
+
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -22,7 +24,7 @@ declare module '@mui/material/styles' {
 }
 
 function Portofolio() {
-
+  
 
   return (
     <main className={style.portofolio}  >

@@ -23,7 +23,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+dist
 
 #dev dependencies and commits conventions 
 .husky
 commitlint.config.ts
+
+# deployment 
+firebaseConfig.js
+.firebase/hosting.ZGlzdA.cache
