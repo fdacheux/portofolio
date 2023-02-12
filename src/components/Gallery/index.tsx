@@ -1,26 +1,28 @@
 import style from "./Gallery.module.scss";
 import { Grid } from "@mui/material";
 import Loader from "../../components/Loader";
-import Pagination  from "../Pagination";
+import Pagination from "../Pagination";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 import { useFindProjects } from "../../utils/hook/find-projects.hook";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect, useState } from "react";
 
 function Gallery() {
-
   const [windowWidth, setWindowSize] = useState(window.screen.width);
-  const [paginationLimit, setPaginationLimit] = useState(windowWidth < 768 ? 1 : 4);
+  const [paginationLimit, setPaginationLimit] = useState(
+    windowWidth < 768 ? 1 : 4
+  );
   const changePagination = () => {
     setWindowSize(window.screen.width);
     setPaginationLimit(windowWidth < 768 ? 1 : 4);
-  }
- const { data, isLoading, error, getAllProjects } = useFindProjects(paginationLimit);
+  };
+  const { data, isLoading, error, getAllProjects } =
+    useFindProjects(paginationLimit);
   useEffect(() => {
     getAllProjects(paginationLimit);
-  }, [paginationLimit])
+  }, [paginationLimit]);
   window.onresize = changePagination;
- 
+
   const projectsArr = data;
   const render = () => {
     if (isLoading) {
@@ -30,8 +32,13 @@ function Gallery() {
         <div className={style.galleryPaginationBox}>
           <div className={style.galleryBox}>
             <div className={style.chevron}>
-              <ArrowBackIosNew />
-              <span className={style.xsmallScreens}> Précédent </span>
+              <ArrowBackIosNew className={style.chevronImg} />
+              <span
+                className={`${style.xsmallScreens} ${style.paginationText}`}
+              >
+                {" "}
+                Précédent{" "}
+              </span>
             </div>
             <Grid container rowSpacing={3} className={style.cardsGrid}>
               {projectsArr.map((element: any, index: number) => {
@@ -76,8 +83,14 @@ function Gallery() {
               })}
             </Grid>
             <div className={style.chevron}>
-              <span className={style.xsmallScreens}>Suivant</span>
-              <ArrowForwardIos />
+              <span
+                className={`${style.xsmallScreens} ${style.paginationText}`}
+              >
+                Suivant
+              </span>
+              <div className={style.chevronContainer}>
+                <ArrowForwardIos className={style.chevronImg} />
+              </div>
             </div>
           </div>
           <Pagination />
