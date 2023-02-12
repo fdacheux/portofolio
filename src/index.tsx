@@ -7,6 +7,8 @@ import LandingPage from "./pages/LandingPage";
 import Layout from "./components/Layout";
 import Portofolio from "./pages/Portofolio";
 import Project from "./pages/Project";
+import Curriculum from "./pages/Curriculum";
+import About from "./pages/About";
 
 
 
@@ -22,6 +24,9 @@ root.render(
           <Route path="/home" element={<Home />} />
           <Route path="/portofolio" element={<Portofolio />} />
           <Route path="/project/:projectId" element={<Project />} />
+          <Route path="/about" element={<About />}/>
+          <Route path="/cv" element={<Curriculum />}/>
+
         </Route>
       </Routes>
     </Router>

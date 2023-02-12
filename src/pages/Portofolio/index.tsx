@@ -1,6 +1,7 @@
 import { ThemeProvider, createTheme } from "@mui/material";
 import Gallery from "../../components/Gallery";
 import style from "./Portofolio.module.scss";
+import PagesTitle from "../../components/PagesTitle";
 
 
 
@@ -29,9 +30,7 @@ function Portofolio() {
   return (
     <main className={style.portofolio}  >
       <ThemeProvider theme={theme}>
-        <div className={`${style.titleBox} ${style.goldenPlaque}`}>
-          <h1 className={style.titleBox__text} >Portofolio</h1>
-        </div>
+        <PagesTitle title="Portofolio" />
         <Gallery />
       </ThemeProvider>
     </main>

@@ -22,6 +22,7 @@
   justify-self: center;
   max-height: 90%;
   margin-top: 190px;
+  width: 100%;
 
   @include medium-screens {
     margin-top: 150px;
@@ -178,4 +179,10 @@
 .chevron {
   display: flex;
   align-self: center;
+}
+
+.xsmallScreens {
+  @include xsmall-screens{
+    display: none;
+  }
 }

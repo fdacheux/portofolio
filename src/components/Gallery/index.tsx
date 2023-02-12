@@ -31,7 +31,7 @@ function Gallery() {
           <div className={style.galleryBox}>
             <div className={style.chevron}>
               <ArrowBackIosNew />
-              <span> Previous </span>
+              <span className={style.xsmallScreens}> Précédent </span>
             </div>
             <Grid container rowSpacing={3} className={style.cardsGrid}>
               {projectsArr.map((element: any, index: number) => {
@@ -76,7 +76,7 @@ function Gallery() {
               })}
             </Grid>
             <div className={style.chevron}>
-              <span>Next</span>
+              <span className={style.xsmallScreens}>Suivant</span>
               <ArrowForwardIos />
             </div>
           </div>

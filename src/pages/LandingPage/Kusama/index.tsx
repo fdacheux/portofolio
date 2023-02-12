@@ -9,6 +9,8 @@ import {
   AssignmentInd,
 } from "@mui/icons-material";
 
+const isUnderConstruction = true;
+
 interface IKasumaPageProps {
   changeStyle: (style: string) => void;
 }
@@ -329,7 +331,7 @@ function KasumaPage({ changeStyle }: IKasumaPageProps) {
           </div>
           <div className={style.col5}></div>
         </div>
-      </div>
+        </div>
       {/* <div className={style.titleBox}>
         <div className={style.ball}>
           
@@ -346,6 +348,7 @@ function KasumaPage({ changeStyle }: IKasumaPageProps) {
         </div>
         
       </div> */}
+      
     </main>
   );
 }
