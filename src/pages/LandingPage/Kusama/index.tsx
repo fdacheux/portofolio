@@ -8,19 +8,21 @@ import {
   InfoOutlined,
   AssignmentInd,
 } from "@mui/icons-material";
+import UnderConstruction from "../../../components/UnderConstruction";
 
 const isUnderConstruction = true;
 
-interface IKasumaPageProps {
+interface IKusamaPageProps {
   changeStyle: (style: string) => void;
 }
 
-function KasumaPage({ changeStyle }: IKasumaPageProps) {
+function KusamaPage({ changeStyle }: IKusamaPageProps) {
   const [iconDisplayed, setDisplay] = useState(true);
   const [linkDisplayed, setLinkDisplay] = useState(false);
   const [isActive, setActive] = useState(false);
   const [mondrianDisplayed, setMondrianDisplay] = useState(false);
   const [isBtnActive, setBtnActive] = useState(false);
+  const isUnderConstruction = true;
 
   const handleLink = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
@@ -39,7 +41,8 @@ function KasumaPage({ changeStyle }: IKasumaPageProps) {
   }, [isBtnActive]);
 
   return (
-    <main className={style.kusamaLandingPage}>
+    <main className={isUnderConstruction ? `${style.underConstruction}` :` ${style.kusamaLandingPage}` }>
+      {!isUnderConstruction &&
       <div className={style.themeBackground}>
         <div className={style.line}>
           <div className={style.col1}>
@@ -332,25 +335,10 @@ function KasumaPage({ changeStyle }: IKasumaPageProps) {
           <div className={style.col5}></div>
         </div>
         </div>
-      {/* <div className={style.titleBox}>
-        <div className={style.ball}>
-          
-        <div className={style.ball__reflect1}>
-          
-          </div>
-          <div className={style.ball__reflect2}>
-          
-          </div>
-          <div className={style.ball__reflect3}>
-
-          
-          </div>
-        </div>
-        
-      </div> */}
-      
+ 
+      } : { isUnderConstruction && <UnderConstruction />}
     </main>
   );
 }
 
-export default KasumaPage;
+export default KusamaPage;
