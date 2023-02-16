@@ -6,6 +6,7 @@
   height: 100%;
   width: 100%;
   align-items: center;
+  @include appearing-page-content-animation;
 }
 
 .galleryBox {
@@ -199,8 +200,6 @@
   text-shadow: 1px 2px 4px rgba(133, 85, 61, 0.418);
 }
 
-.chevronContainer {
-}
 
 .chevronImg {
   color: #967e4b;

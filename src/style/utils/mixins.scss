@@ -255,3 +255,16 @@
 @mixin home-icon-animation {
   animation: appearing-door 0.4s ease-out forwards;
 }
+
+@mixin loader-animation {
+  animation: moveX 5s linear infinite, appearing-page-content 0.2s ease-in;;
+}
+
+
+@mixin appearing-page-content-animation {
+  animation: appearing-page-content 0.4s ease-in;
+}
+
+@mixin appearing-page-content-animation {
+  animation: disappearing-page-content 0.4s ease-in;
+}

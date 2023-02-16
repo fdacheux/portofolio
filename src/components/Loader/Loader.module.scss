@@ -1,0 +1,48 @@
+@import "../../style/utils/mixins.scss";
+
+.loader {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  @include medium-large-screens {
+    width: 700px;
+  }
+  @include xsmall-screens {
+    width: 250px;
+  }
+}
+
+.imgBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  width: 200px;
+  min-width: 200px;
+  padding-left: 30px;
+  padding-right: 30px;
+  @include loader-animation;
+  @include xsmall-screens {
+    height: 120px;
+    min-width: 130px;
+    width: 130px;
+  }
+}
+
+.paint {
+  height: 150px;
+  @include xsmall-screens {
+    height: 110px;
+  }
+  
+}
+
+.text{
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 24px;
+    font-style: italic;
+}

@@ -38,14 +38,13 @@
 }
 
 @keyframes mondrian-about-text-animation {
-    0%{
-        transform: translate(0, 0%);
-      }
-      100% {
-        transform: translate(0, -100%);
-      }
+  0% {
+    transform: translate(0, 0%);
+  }
+  100% {
+    transform: translate(0, -100%);
+  }
 }
-
 
 @keyframes appearing-door {
   from {
@@ -55,5 +54,32 @@
   to {
     transform: rotate(360deg);
     opacity: 1;
+  }
+}
+
+@keyframes moveX {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  100% {
+    transform: translate(-400%, 0);
+  }
+}
+
+@keyframes appearing-page-content{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappearing-page-content{
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
