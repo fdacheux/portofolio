@@ -17,6 +17,12 @@ function Project() {
           <div className={style.titleBox}>
             <h1 className={style.titleBox__text}>{project["project-name"]}</h1>
           </div>
+          <div className={style.project__type}>
+            <div className={style.project__typeImgBox}>
+              <img src={project.typeIconUrl} alt="" className={style.project__typeIcon} />
+            </div>
+            <p>{project["project-type"]}</p>          
+          </div>
           {project["project-type"] === "OpenClassrooms" && project && (
             <OcProject {...project} />
           )}

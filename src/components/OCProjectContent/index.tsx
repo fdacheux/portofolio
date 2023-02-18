@@ -7,7 +7,6 @@ import { v4 as uuidv4 } from "uuid";
 function OCProjectContent(project : any) {
   const dateTime = new Date(project['completion-date']);
   const frDate = dateTime.toLocaleDateString("fr");
-  console.log(project);
 
   return (
     <div className={style.ocContent}>
@@ -19,7 +18,7 @@ function OCProjectContent(project : any) {
       <div>
         <ul>
           {project.tags.map((el: string) => {
-            return <li id={uuidv4()}>{el}</li>;
+            return <li key={uuidv4()}>{el}</li>;
           })}
         </ul>
       </div>
@@ -45,7 +44,7 @@ function OCProjectContent(project : any) {
       <section>
         <ul>
           {project.technologies.map((el: string) => {
-            return <li id={uuidv4()}>{el}</li>;
+            return <li key={uuidv4()}>{el}</li>;
           })}
         </ul>
       </section>

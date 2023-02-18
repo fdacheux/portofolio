@@ -5,6 +5,24 @@
   justify-content: center;
   position: relative;
   z-index: 11;
+
+  &__type{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  &__typeImgBox{
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+  }
+  
+  &__typeIcon {
+    max-height: 100%;
+    max-width: 100%;
+  }
 }
 
 .titleBox {

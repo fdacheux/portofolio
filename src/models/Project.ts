@@ -1,18 +1,23 @@
 export default interface IProjectData {
   id: string;
-  projectId: string;
-  completionDate: string;
+  projectId: number;
+  progression: string;
+  completionDate: Date;
   typeOfProject: string;
+  typeIconUrl: string;
   title: string;
   miniature: string;
+  miniatureAlt: string;
   cover: string;
   alt: string;
   description: string;
   descriptionSoutenance?: string;
   description_short: string;
-  technologies: Array<String>[];
-  tags: Array<String>[];
+  technologies: string[];
+  soutenanceTools: string[];
+  tags: string[];
   githubUrl: string;
   githubPagesUrl?: string;
-  otherUrl?: string;
+  firebaseUrl?: string;
+  otherUrls?: string[];
 }

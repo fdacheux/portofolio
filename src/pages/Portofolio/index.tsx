@@ -2,6 +2,7 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import Gallery from "../../components/Gallery";
 import style from "./Portofolio.module.scss";
 import PagesTitle from "../../components/PagesTitle";
+import { ProjectsContextProvider } from "../../utils/context/projects.context";
 
 
 
@@ -31,7 +32,9 @@ function Portofolio() {
     <main className={style.portofolio}  >
       <ThemeProvider theme={theme}>
         <PagesTitle title="Portofolio" />
-        <Gallery />
+        <ProjectsContextProvider>
+          <Gallery />
+        </ProjectsContextProvider>
       </ThemeProvider>
     </main>
   );

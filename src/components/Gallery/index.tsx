@@ -1,45 +1,36 @@
 import style from "./Gallery.module.scss";
 import { Grid } from "@mui/material";
 import Loader from "../../components/Loader";
-import Pagination from "../Pagination";
-import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
-import { useFindProjects } from "../../utils/hook/find-projects.hook";
+import Pagination from "../Pagination/PageNumbers";
 import { v4 as uuidv4 } from "uuid";
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import { ProjectsContext } from "../../utils/context/projects.context";
+import Chevron from "../Pagination/Chevrons";
 
 function Gallery() {
+  const { projects, isLoading, error, setLimit} = useContext(ProjectsContext);
   const [windowWidth, setWindowSize] = useState(window.screen.width);
-  const [paginationLimit, setPaginationLimit] = useState(
-    windowWidth < 768 ? 1 : 4
-  );
+
   const changePagination = () => {
     setWindowSize(window.screen.width);
-    setPaginationLimit(windowWidth < 768 ? 1 : 4);
+    setLimit(windowWidth < 768 ? 1 : 4);
   };
-  const { data, isLoading, error, getAllProjects } =
-    useFindProjects(paginationLimit);
-  useEffect(() => {
-    getAllProjects(paginationLimit);
-  }, [paginationLimit]);
+  // const { data, isLoading, error, getAllProjects } =
+  //   useFindProjects(paginationLimit);
+  // useEffect(() => {
+  //   getAllProjects(4, paginationLimit);
+  // }, [paginationLimit]);
   window.onresize = changePagination;
 
-  const projectsArr = data;
+  const projectsArr = projects;
   const render = () => {
     if (isLoading) {
       return <Loader />;
-    } else if (data && !isLoading) {
+    } else if (projects && !isLoading) {
       return (
         <div className={style.galleryPaginationBox}>
           <div className={style.galleryBox}>
-            <div className={style.chevron}>
-              <ArrowBackIosNew className={style.chevronImg} />
-              <span
-                className={`${style.xsmallScreens} ${style.paginationText}`}
-              >
-                {" "}
-                Précédent{" "}
-              </span>
-            </div>
+            <Chevron isLeftChevron={true} />
             <Grid container rowSpacing={3} className={style.cardsGrid}>
               {projectsArr.map((element: any, index: number) => {
                 return (
@@ -82,16 +73,7 @@ function Gallery() {
                 );
               })}
             </Grid>
-            <div className={style.chevron}>
-              <span
-                className={`${style.xsmallScreens} ${style.paginationText}`}
-              >
-                Suivant
-              </span>
-              <div className={style.chevronContainer}>
-                <ArrowForwardIos className={style.chevronImg} />
-              </div>
-            </div>
+            <Chevron isLeftChevron={false} />
           </div>
           <Pagination />
         </div>
