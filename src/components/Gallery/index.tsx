@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import Loader from "../../components/Loader";
 import Pagination from "../Pagination/PageNumbers";
 import { v4 as uuidv4 } from "uuid";
-import { useContext, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { ProjectsContext } from "../../utils/context/projects.context";
 import Chevron from "../Pagination/Chevrons";
 
@@ -11,16 +11,14 @@ function Gallery() {
   const { projects, isLoading, error, setLimit} = useContext(ProjectsContext);
   const [windowWidth, setWindowSize] = useState(window.screen.width);
 
-  const changePagination = () => {
+  const changePagination = useCallback(() => {
     setWindowSize(window.screen.width);
     setLimit(windowWidth < 768 ? 1 : 4);
-  };
-  // const { data, isLoading, error, getAllProjects } =
-  //   useFindProjects(paginationLimit);
-  // useEffect(() => {
-  //   getAllProjects(4, paginationLimit);
-  // }, [paginationLimit]);
+  },[windowWidth, setLimit]);
+
   window.onresize = changePagination;
+
+  useEffect(() => changePagination(), [changePagination]) 
 
   const projectsArr = projects;
   const render = () => {

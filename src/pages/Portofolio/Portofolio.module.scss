@@ -8,12 +8,12 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   overscroll-behavior: auto;
 
   @include medium-large-screens {
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
   }
 }

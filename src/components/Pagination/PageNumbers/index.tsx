@@ -8,7 +8,7 @@ const Pagination = () => {
   const { page, pageCount, goToPage} = useContext(ProjectsContext);
     return (
         <div className={style.pageCount}>
-        {[...Array(pageCount)].map((x, number) => (
+        {[...Array(pageCount)].map((_x, number) => (
         <button
           key={uuidv4()}
           className={style.pageCount__button}
