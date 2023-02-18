@@ -1,6 +1,6 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import style from "./LandingPage.module.scss";
-import KasumaPage from "./Kusama";
+import KusamaPage from "./Kusama";
 import MondrianPage from "./Mondrian";
 
 function LandingPage() {
@@ -12,7 +12,7 @@ function LandingPage() {
   return (
     <>
       {styleName === "Kusama" ? (
-         <KasumaPage changeStyle={changeStyle} /> 
+         <KusamaPage changeStyle={changeStyle} /> 
        ) : ( 
         <MondrianPage changeStyle={changeStyle} />
        )} 

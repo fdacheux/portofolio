@@ -1,0 +1,55 @@
+@import "../../../style/utils/mixins.scss";
+
+.pageCount {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 50px;
+  @include medium-large-screens{
+    gap: 24px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    border: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5),
+      0px 1px 3px rgba(0, 0, 0, 0.3);
+    border-color: #111;
+    color: #555;
+    background: radial-gradient(#ffffff, #fea 38%, #a95);
+    background: -webkit-radial-gradient(#ffffff, #fea 38%, #a95);
+
+    &:disabled {
+      cursor: unset;
+      filter: grayscale(100%);
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
+
+  &__numbers {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(
+      to bottom,
+      #967e4b 22%,
+      #6d5532 24%,
+      #5a4929 26%,
+      #5a451e 27%,
+      #f3d79b 40%,
+      #644d2b 78%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    text-shadow: 1px 2px 4px rgba(133, 85, 61, 0.418);
+  }
+}

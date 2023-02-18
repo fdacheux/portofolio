@@ -1,13 +1,19 @@
 @import "../../style/utils/mixins.scss";
 
-.header {
-  position: fixed;
+.header {    
   top: 0;
+  position: fixed;
+  @include large-screens {
+    top: 0;
+    position: fixed;
+  }
   display: flex;
   width: 100%;
   background-color: #461818e0;
   padding: 5px 5px;
-  z-index: 10;
+  z-index: 12;
+  transform-origin: top;
+  animation: appearing-navbar 250ms ease-out forwards;
 }
 .logo {
   width: 100%;
@@ -25,7 +31,10 @@
   overflow: hidden;
 }
 
-
+.isHidden {
+  transform-origin: top;
+  animation: disappearing-navbar 250ms ease-out forwards;
+}
 
 @include medium-large-screens {
   .header {
@@ -34,5 +43,27 @@
   .imgContainer {
     height: 60px;
     width: 60px;
+  }
+}
+
+@keyframes appearing-navbar {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes disappearing-navbar {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
   }
 }

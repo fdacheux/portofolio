@@ -1,13 +1,43 @@
+import { ThemeProvider, createTheme } from "@mui/material";
 import Gallery from "../../components/Gallery";
 import style from "./Portofolio.module.scss";
+import PagesTitle from "../../components/PagesTitle";
+import { ProjectsContextProvider } from "../../utils/context/projects.context";
+
+
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 576,
+      md: 768,
+      lg: 992,
+      xl: 1200,
+      xxl: 1400,
+    },
+  },
+});
+
+declare module '@mui/material/styles' {
+  interface BreakpointOverrides {
+    xxl: true;
+  }
+}
 
 function Portofolio() {
-  return <main className={style.portofolio}>
-    <div className={style.titleBox}>
-      <h1>Portofolio</h1>
-    </div>
-    <Gallery />
-  </main>
+  
+
+  return (
+    <main className={style.portofolio}  >
+      <ThemeProvider theme={theme}>
+        <PagesTitle title="Portofolio" />
+        <ProjectsContextProvider>
+          <Gallery />
+        </ProjectsContextProvider>
+      </ThemeProvider>
+    </main>
+  );
 }
 
 export default Portofolio;

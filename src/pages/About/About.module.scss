@@ -1,0 +1,19 @@
+@import "../../style/utils/mixins.scss";
+
+.about{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 11;
+    padding-top: 80px;
+    @include xsmall-screens {
+      padding-top: 0px;
+    }
+    @include medium-large-screens {
+      padding-top: 220px;
+    }
+}
