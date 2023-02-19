@@ -262,9 +262,9 @@
 
 
 @mixin appearing-page-content-animation {
-  animation: appearing-page-content 0.4s ease-in;
+  animation: appearing-page-content 0.4s ease-in forwards;
 }
 
-@mixin appearing-page-content-animation {
+@mixin disappearing-page-content-animation {
   animation: disappearing-page-content 0.4s ease-in;
 }

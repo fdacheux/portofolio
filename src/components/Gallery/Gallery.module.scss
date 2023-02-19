@@ -74,10 +74,12 @@
     justify-content: space-between;
     align-items: center;
     height: fit-content;
+
     &__imgContainer {
       height: 80%;
       margin-bottom: 20px;
     }
+
     &__miniature {
       max-height: 200px;
       @include xsmall-screens {
@@ -91,17 +93,20 @@
         transform: rotate(-5deg);
       }
     }
+
     &__toRight {
       &:hover {
         transform: rotate(5deg);
       }
     }
+
     &__projectLabelGold {
       box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1),
         0px 1px 3px rgba(0, 0, 0, 0.3);
       outline: none;
       border: 1px solid #ba6;
     }
+
     &__projectLabel {
       align-self: center;
       position: relative;
@@ -137,6 +142,7 @@
       padding-right: 8px;
       padding-top: 8px;
       padding-bottom: 1px;
+
       &:after {
         position: absolute;
         top: 0;
