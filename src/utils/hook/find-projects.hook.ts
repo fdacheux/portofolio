@@ -48,7 +48,7 @@ export const useFindProjects = (paginationLimit: number) => {
         console.log(err.message);
         setError(err?.message);
       } finally {
-        setLoading(false);
+        // setLoading(false);
       }
     },
     []

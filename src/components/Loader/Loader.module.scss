@@ -1,5 +1,14 @@
 @import "../../style/utils/mixins.scss";
 
+.loaderContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    @include xsmall-screens {
+    width: 280px;
+  }
+}
+
 .loader {
   width: 500px;
   display: flex;
@@ -9,7 +18,7 @@
     width: 700px;
   }
   @include xsmall-screens {
-    width: 250px;
+    width: 280px;
   }
 }
 
@@ -45,4 +54,7 @@
     width: 100%;
     font-size: 24px;
     font-style: italic;
+    @include xsmall-screens{
+      font-size: 20px;
+    }
 }
