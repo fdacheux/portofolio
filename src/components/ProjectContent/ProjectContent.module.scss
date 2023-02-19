@@ -33,6 +33,7 @@
   &__tagsList {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     border-radius: 5px;
     padding: 0;
     margin-bottom: 0;
@@ -41,6 +42,14 @@
 }
 
 .section {
+  &__line {
+    gap: 40px;
+    @include xsmall-screens {
+      margin-left: 0;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  }
   &__title {
     border-color: #7c7c7c;
     background-image: -webkit-repeating-linear-gradient(
@@ -76,13 +85,16 @@
     color: #fff;
     text-shadow: 1px 2px 4px rgba(65, 65, 65, 0.418);
   }
+
   &__col {
     display: flex;
     flex-direction: column;
     width: 50%;
-    padding-left: 10px;
-    padding-right: 10px;
+    @include xsmall-screens {
+      width: 100%;
+    }
   }
+
   &__colTitle {
     margin-top: 5px;
     margin-bottom: 10px;
@@ -92,7 +104,7 @@
     margin: 0;
     padding-left: 0;
   }
-  &__lists{
+  &__lists {
     width: max-content;
   }
 }

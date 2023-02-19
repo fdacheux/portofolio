@@ -72,7 +72,7 @@ const ProjectContent = (project: any) => {
               <Stack
                 direction="row"
                 divider={<Divider orientation="vertical" flexItem />}
-                spacing={2}
+                className={style.section__line}
               >
                 <div className={style.section__col}>
                   <h3 className={style.section__colTitle}>Description :</h3>
@@ -118,7 +118,7 @@ const ProjectContent = (project: any) => {
                 <Stack
                   direction="row"
                   divider={<Divider orientation="vertical" flexItem />}
-                  spacing={2}
+                  className={style.section__line}
                 >
                   <div className={style.section__col}>
                     <h3 className={style.section__colTitle}>Description : </h3>
