@@ -24,14 +24,23 @@
     -webkit-text-fill-color: transparent;
     color: #fff;
     text-shadow: 1px 2px 4px rgba(133, 85, 61, 0.418);
-    font-size: 16px;
+    font-size: 18px;
     align-self: center;
   }
   
+  .chevronContainer{
+    height: 40px;
+    font-size: 40px;
+    @include xsmall-screens{
+      height: 50px;
+      font-size: 50px;
+    }
+  }
   
   .chevronImg {
     color: #967e4b;
     text-shadow: 1px 2px 4px rgba(133, 85, 61, 0.418);
+
   }
   
   .xsmallScreens {

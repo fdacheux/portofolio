@@ -4,16 +4,17 @@ import { useContext } from "react";
 import { ProjectsContext } from "../../../utils/context/projects.context";
 
 interface IChevron {
-    isLeftChevron: boolean;
+  isLeftChevron: boolean;
 }
 
-const Chevron = ({isLeftChevron}: IChevron) => {
-    
-    const { next, previous } = useContext(ProjectsContext);
-    
+const Chevron = ({ isLeftChevron }: IChevron) => {
+  const { next, previous } = useContext(ProjectsContext);
+
   return isLeftChevron ? (
     <button className={style.chevron} onClick={previous}>
-      <ArrowBackIosNew className={style.chevronImg} />
+      <div className={style.chevronContainer}>
+        <ArrowBackIosNew className={style.chevronImg} fontSize="inherit"/>
+      </div>
       <span className={`${style.xsmallScreens} ${style.paginationText}`}>
         {" "}
         Précédent{" "}
@@ -25,11 +26,10 @@ const Chevron = ({isLeftChevron}: IChevron) => {
         Suivant
       </span>
       <div className={style.chevronContainer}>
-        <ArrowForwardIos className={style.chevronImg} />
+        <ArrowForwardIos className={style.chevronImg} fontSize="inherit" />
       </div>
     </button>
   );
-}
-
+};
 
 export default Chevron;
