@@ -41,6 +41,14 @@
   }
 }
 
+.paper {
+  margin-left: 15px;
+  margin-right: 15px;
+  @include medium-large-screens{
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
 .section {
   &__line {
     gap: 40px;

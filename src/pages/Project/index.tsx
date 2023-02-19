@@ -12,21 +12,16 @@ function Project() {
   const { data: project, isLoading, error, getProject } = useFindProject();
   const render = () => {
     if (isLoading) {
-      return <Loader />;
+      return (
+        <div className={style.loaderBox}>
+          <Loader />
+        </div>
+      );
     } else if (project && !isLoading) {
       return (
-        <div className={style.project}>
-          <PagesTitle title={project["project-name"]} />
- 
+        <>
           <ProjectContent {...project} />
-          <div className={style.project__linkContainer}>
-            <Palette sx={{
-              fontSize: 30,
-              color: "#bda239",
-            }} />
-            <Link to="/portofolio" className={style.project__link}>Go back to portofolio</Link>
-          </div>
-        </div>
+        </>
       );
     } else if (error) {
       return (
@@ -41,7 +36,23 @@ function Project() {
     projectId && getProject(parseInt(projectId));
   }, [projectId, getProject]);
 
-  return <main >{render()}</main>;
+  return (
+    <main className={style.project}>
+      <PagesTitle title={project["project-name"]} />
+      {render()}
+      <div className={style.project__linkContainer}>
+        <Palette
+          sx={{
+            fontSize: 30,
+            color: "#bda239",
+          }}
+        />
+        <Link to="/portofolio" className={style.project__link}>
+          Go back to portofolio
+        </Link>
+      </div>
+    </main>
+  );
 }
 
 export default Project;

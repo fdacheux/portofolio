@@ -29,6 +29,10 @@
       #fea 87%,
       #a95
     );
+
+    @include xsmall-screens{
+      width: 80%;
+    }
   
     @include medium-large-screens {
       top: 120px;
@@ -36,7 +40,7 @@
       padding-right: 30px;
     }
     @include large-screens{
-      width: 20%;
+      width: 30%;
     }
   
     &__hidden {
