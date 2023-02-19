@@ -48,6 +48,35 @@
   justify-content: center;
 }
 
+@mixin pages-content-position {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  max-height: 90%;
+  margin-top: 190px;
+  width: 100%;
+
+  @include medium-screens {
+    margin-top: 150px;
+  }
+  @include large-screens {
+    margin-top: 100px;
+    height: 100%;
+    width: 100%;
+  }
+  @media (min-aspect-ratio: 2/4) and (max-aspect-ratio: 3/4) {
+    margin-top: 190px;
+  }
+  @media (min-aspect-ratio: 4/5) and (max-aspect-ratio: 10/5) {
+    margin-top: 250px;
+  }
+
+  @media (min-aspect-ratio: 16/9) {
+    margin-top: 220px;
+  }
+}
+
+
 //Mediaqueries
 
 @mixin xsmall-screens {
