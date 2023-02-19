@@ -1,14 +1,13 @@
 import style from "./ListElement.module.scss"
 
 interface IListElement {
-    key: string,
     text: string
 }
 
 
-const ListElement = ({ key, text }: IListElement) => {
+const ListElement = ({text }: IListElement) => {
   return (
-    <li  className={style.listElement}  key={key}>
+    <li className={style.listElement}>
       {text}
     </li>
   )

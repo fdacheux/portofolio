@@ -24,8 +24,6 @@ export const useFindProject = () => {
     try {
       const response = await getDocs(filteredResults);
       const responseArr: any = [];
-
-      console.log(response);
       if (!response) {
         throw new Error("No data found !");
       } else {

@@ -25,7 +25,7 @@ const ProjectContent = (project: any) => {
   };
   return (
     <div className={style.project}>
-      <Paper elevation={3} className={style.paper}>
+      <Paper elevation={3} className={style.paper} sx={{backgroundColor: "#f8f8f8"}}>
         <div className={style.project__content}>
           <div className={style.project__type}>
             <div className={style.project__typeImgBox}>
