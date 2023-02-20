@@ -6,6 +6,7 @@ export default interface IProjectData {
   progression: string;
   ["completion-date"]: Timestamp;
   ["project-type"]: string;
+  ['project-name']: string;
   typeIconUrl: string;
   miniature: string;
   miniatureAlt: string;
@@ -17,9 +18,7 @@ export default interface IProjectData {
   technologies: string[];
   ["soutenance-tools"]: string[];
   tags: string[];
-  githubUrl: string;
-  githubPagesUrl?: string;
-  firebaseUrl?: string;
+  ["github-url"]: string;
+  displayUrl?: string;
   otherUrls?: string[];
-  ['project-name']: string;
 }

@@ -1,19 +1,24 @@
+@import "../../../style/utils/mixins.scss";
+
 .type {
-    display: flex;
-    align-items: center;  
-    
-    &__imgBox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  @include medium-large-screens {
+    width: 50%;
+  }
+
+  &__imgBox {
     display: flex;
     margin-right: 10px;
     width: 30px;
     height: 30px;
     object-fit: cover;
+
   }
 
   &__icon {
     max-height: 100%;
     max-width: 100%;
   }
-  }
-
-
+}

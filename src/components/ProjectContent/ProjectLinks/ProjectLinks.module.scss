@@ -1,0 +1,70 @@
+@import "../../../style/utils/mixins.scss";
+
+.links {
+  display: flex;
+  margin-right: 10px;
+  gap: 60px;
+  width: 100%;
+
+  @include medium-large-screens {
+    width: 50%;
+    justify-content: flex-end;
+  }
+
+  @include xsmall-screens {
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  &__urlBox {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 50%;
+    @include xsmall-screens {
+      border-radius: 5px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      background-color: #4f916b2f;
+    }
+    @include medium-large-screens {
+      width: auto;
+    }
+  }
+
+  &__otherUrl {
+    justify-content: flex-end;
+    @include xsmall-screens {
+      justify-content: center;
+    }
+  }
+
+  &__github {
+    @include medium-large-screens {
+      justify-content: flex-end;
+    }
+    @include xsmall-screens {
+      justify-content: center;
+    }
+  }
+
+  &__url {
+    display: flex;
+    cursor: pointer;
+    opacity: 1;
+    transition: all ease-in-out 250ms;
+    &:hover {
+      opacity: 0.75;
+      transform: scale(1.1);
+      transition: all ease-in-out 250ms;
+    }
+  }
+}
+
+.noXsmallScreens {
+  @include xsmall-screens {
+    display: none;
+  }
+}

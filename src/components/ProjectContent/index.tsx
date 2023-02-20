@@ -1,4 +1,4 @@
-import { Alert,  Divider, Paper, Stack } from "@mui/material";
+import { Alert, Divider, Paper, Stack } from "@mui/material";
 import style from "./ProjectContent.module.scss";
 import { v4 as uuidv4 } from "uuid";
 import AdditionalInfo from "../AdditionalInfo";
@@ -6,6 +6,7 @@ import ListElement from "../ListElement";
 import IProjectData from "../../models/Project";
 import ProjectType from "./ProjectType";
 import ProjectTags from "./ProjectTags";
+import ProjectLinks from "./ProjectLinks";
 
 const ProjectContent = (project: IProjectData) => {
   const dateTime = project["completion-date"].toDate();
@@ -28,9 +29,16 @@ const ProjectContent = (project: IProjectData) => {
   };
   return (
     <div className={style.project}>
-      <Paper elevation={3} className={style.paper} sx={{backgroundColor: "#f8f8f8"}}>
+      <Paper
+        elevation={3}
+        className={style.paper}
+        sx={{ backgroundColor: "#f8f8f8" }}
+      >
         <div className={style.project__content}>
-          <ProjectType {...project}/>
+          <div className={style.project__typeAndLinks}>
+            <ProjectType {...project} />
+            <ProjectLinks {...project} />
+          </div>
           {project["project-type"] === "OpenClassrooms" && (
             <div className={style.alert}>
               <Alert severity="info">
@@ -65,9 +73,11 @@ const ProjectContent = (project: IProjectData) => {
                     Technologies, langages, outils :{" "}
                   </h3>
                   <div>
-                    <ul className={`${style.section__colText} ${style.section__lists}`}>
+                    <ul
+                      className={`${style.section__colText} ${style.section__lists}`}
+                    >
                       {project.technologies.map((el: string) => {
-                        return <ListElement key={uuidv4()} text={el}/>;
+                        return <ListElement key={uuidv4()} text={el} />;
                       })}
                     </ul>
                   </div>
@@ -108,9 +118,11 @@ const ProjectContent = (project: IProjectData) => {
                     <h3 className={style.section__colTitle}>
                       Outils utilisés pour la présentation :
                     </h3>
-                    <ul className={`${style.section__colText} ${style.section__lists}`}>
+                    <ul
+                      className={`${style.section__colText} ${style.section__lists}`}
+                    >
                       {project["soutenance-tools"].map((el: string) => {
-                        return <ListElement key={uuidv4()} text={el}/>;
+                        return <ListElement key={uuidv4()} text={el} />;
                       })}
                     </ul>
                   </div>
