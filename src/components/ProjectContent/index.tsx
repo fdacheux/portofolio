@@ -1,10 +1,13 @@
-import { Alert, Chip, Divider, ListItem, Paper, Stack } from "@mui/material";
+import { Alert,  Divider, Paper, Stack } from "@mui/material";
 import style from "./ProjectContent.module.scss";
 import { v4 as uuidv4 } from "uuid";
 import AdditionalInfo from "../AdditionalInfo";
 import ListElement from "../ListElement";
+import IProjectData from "../../models/Project";
+import ProjectType from "./ProjectType";
+import ProjectTags from "./ProjectTags";
 
-const ProjectContent = (project: any) => {
+const ProjectContent = (project: IProjectData) => {
   const dateTime = project["completion-date"].toDate();
   const frDate = dateTime.toLocaleDateString("en-GB");
   const isProjectCompleted = () => {
@@ -12,7 +15,7 @@ const ProjectContent = (project: any) => {
       return (
         <AdditionalInfo>
           <span>Projet complété le :</span>
-          <time dateTime={project.completionDate}> {frDate}</time>
+          <time dateTime={frDate}> {frDate}</time>
         </AdditionalInfo>
       );
     } else {
@@ -27,16 +30,7 @@ const ProjectContent = (project: any) => {
     <div className={style.project}>
       <Paper elevation={3} className={style.paper} sx={{backgroundColor: "#f8f8f8"}}>
         <div className={style.project__content}>
-          <div className={style.project__type}>
-            <div className={style.project__typeImgBox}>
-              <img
-                src={project.typeIconUrl}
-                alt=""
-                className={style.project__typeIcon}
-              />
-            </div>
-            <p>{project["project-type"]}</p>
-          </div>
+          <ProjectType {...project}/>
           {project["project-type"] === "OpenClassrooms" && (
             <div className={style.alert}>
               <Alert severity="info">
@@ -46,23 +40,7 @@ const ProjectContent = (project: any) => {
               </Alert>
             </div>
           )}
-          <div>
-            <ul className={style.project__tagsList}>
-              {project.tags.map((el: string) => {
-                return (
-                  <ListItem
-                    key={uuidv4()}
-                    sx={{
-                        width: "fit-content",
-                        paddingLeft: 0,
-                    }}
-                  >
-                    <Chip label={el}/>
-                  </ListItem>
-                );
-              })}
-            </ul>
-          </div>
+          <ProjectTags {...project} />
           <section className={`${style.description} ${style.section}`}>
             <article>
               <Divider>

@@ -7,11 +7,12 @@ import {
 } from "firebase/firestore";
 import { useCallback, useState } from "react";
 import { db } from "../../firebase.config";
+import IProjectData from "../../models/Project";
 
 const projectsRef = collection(db, "projects") as CollectionReference<any>;
 
 export const useFindProject = () => {
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<IProjectData>();
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -23,7 +24,7 @@ export const useFindProject = () => {
     );
     try {
       const response = await getDocs(filteredResults);
-      const responseArr: any = [];
+      const responseArr: IProjectData[] = [];
       if (!response) {
         throw new Error("No data found !");
       } else {

@@ -32,13 +32,15 @@ function Project() {
     }
   };
 
+
+
   useEffect(() => {
     projectId && getProject(parseInt(projectId));
   }, [projectId, getProject]);
 
   return (
     <main className={style.project}>
-      <PagesTitle title={project["project-name"]} />
+      <PagesTitle title={project ? project["project-name"] : 'Project'} />
       {render()}
       <div className={style.project__linkContainer}>
         <Palette

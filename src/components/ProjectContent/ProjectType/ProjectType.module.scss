@@ -1,0 +1,19 @@
+.type {
+    display: flex;
+    align-items: center;  
+    
+    &__imgBox {
+    display: flex;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+  }
+
+  &__icon {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  }
+
+

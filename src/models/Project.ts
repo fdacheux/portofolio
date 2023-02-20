@@ -1,23 +1,25 @@
+import { Timestamp } from "firebase/firestore";
+
 export default interface IProjectData {
   id: string;
   projectId: number;
   progression: string;
-  completionDate: Date;
-  typeOfProject: string;
+  ["completion-date"]: Timestamp;
+  ["project-type"]: string;
   typeIconUrl: string;
-  title: string;
   miniature: string;
   miniatureAlt: string;
   cover: string;
   alt: string;
   description: string;
-  descriptionSoutenance?: string;
+  ["soutenance-description"]?: string;
   description_short: string;
   technologies: string[];
-  soutenanceTools: string[];
+  ["soutenance-tools"]: string[];
   tags: string[];
   githubUrl: string;
   githubPagesUrl?: string;
   firebaseUrl?: string;
   otherUrls?: string[];
+  ['project-name']: string;
 }
