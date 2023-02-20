@@ -61,6 +61,12 @@
       transition: all ease-in-out 250ms;
     }
   }
+  &__urlUnique {
+    @include xsmall-screens {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 }
 
 .noXsmallScreens {

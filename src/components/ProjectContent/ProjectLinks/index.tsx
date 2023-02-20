@@ -5,12 +5,12 @@ import IProjectData from "../../../models/Project";
 const ProjectLinks = (project: IProjectData) => {
   return (
     <div className={style.links}>
-      <div className={`${style.links__urlBox} ${style.links__github}`}>
+      <div className={project.displayUrl ? `${style.links__urlBox} ${style.links__github}`: ` ${style.links__urlBox} ${style.links__urlUnique}`}>
         <p className={style.noXsmallScreens}>Source : </p>
         <a
           href={project["github-url"]}
           aria-label="Github"
-          className={style.links__url}
+          className={!project.displayUrl ? `${style.links__url}` : `${style.links__url}` }
           target="_blank"
           rel="noopener noreferrer"
         >
